@@ -87,7 +87,7 @@ y_axis_label <-
 
 # These are results of 650/690, 390/1169
 graph_widht_percentage <- .94202
-graph_height_percentage <- .33361
+graph_height_percentage <- .345
 
 graph_width_absolute  <- 
   template_width * graph_widht_percentage

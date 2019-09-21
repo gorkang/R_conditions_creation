@@ -6,4 +6,4 @@ How likely is a positive result when ${e://Field/comp_01_0} is present? (0-100%)
 How likely is a positive result when ${e://Field/comp_01_0} is NOT present? (0-100%)
 How trustworthy is a positive result in a ${e://Field/comp_01_0} screening? (0-100%)
 If a ${e://Field/woman_age_0} year old woman receives a positive test result, how likely is that she actually ${e://Field/comp_02_0}? (0-100%)
-What percentage of ${e://Field/woman_age_0} year old ${e://Field/comp_04_0}? (0-100%)
+How many women at age ${e://Field/woman_age_0} ${e://Field/comp_05_0} at the time of the screening?

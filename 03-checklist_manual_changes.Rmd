@@ -109,7 +109,7 @@ tibble(check = "",
                 "fu_Q06_01", 
                 "fu_Q07_01", 
                 "fu_Q08_01", 
-                "com_Q08_01_01", "com_Q08_02_01", "com_Q08_03_01"),
+                "com_Q10_01_01", "com_Q10_02_01", "com_Q10_03_01"),
        extra = c("_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ & _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__", 
                  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gi__",  
                  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gs__",  
@@ -132,10 +132,45 @@ tibble(check = "",
 _Block 02_
 
 ```{r, table05, echo=FALSE}
-tibble(check = "",
-       qIDs = c("ppv_q_02_02", "ppv_gi_02", "ppv_gs_02", "ppv_sg01_02", "ppv_sg02_02", "ppv_sg03_02", "ppv_sg04_02", "ppv_ss01_02", "ppv_ss02_02", "fu_Q05_02", "fu_Q06_02", "fu_Q07_02", "fu_Q08_02", "com_Q08_01_01", "com_Q08_02_01", "com_Q08_03_01"),
-       extra = c("_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ & _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gi__",  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gs__",  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __ss__", "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __ss__", "_Question_ > _fu_Q01_02_ > __No__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _1_", "_Question_ > _fu_Q01_02_ > __No__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _10_", "_Question_ > _fu_Q01_02_ > __Yes__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _1_", "_Question_ > _fu_Q01_02_ > __Yes__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _10_", 
-                 "_Embedded Data_ > _press_format_ > _Is NOT Equal to_ > __prab__ and __prre__" , "_Embedded Data_ > _press_format_ > _Is NOT Equal to_ > __prab__ and __prre__", "_Embedded Data_ > _press_format_ > _Is Equal to_ > __prab__ or __prre__")) %>% 
+tibble(
+  check = "",
+  qIDs = c(
+    "ppv_q_02_02",
+    "ppv_gi_02",
+    "ppv_gs_02",
+    "ppv_sg01_02",
+    "ppv_sg02_02",
+    "ppv_sg03_02",
+    "ppv_sg04_02",
+    "ppv_ss01_02",
+    "ppv_ss02_02",
+    "fu_Q05_02",
+    "fu_Q06_02",
+    "fu_Q07_02",
+    "fu_Q08_02",
+    "com_Q10_01_01",
+    "com_Q10_02_01",
+    "com_Q10_03_01"
+  ),
+  extra = c(
+    "_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ & _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gi__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gs__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __ss__",
+    "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __ss__",
+    "_Question_ > _fu_Q01_02_ > __No__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _1_",
+    "_Question_ > _fu_Q01_02_ > __No__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _10_",
+    "_Question_ > _fu_Q01_02_ > __Yes__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _1_",
+    "_Question_ > _fu_Q01_02_ > __Yes__ > _Is Selected_ & _Embedded Data_ > _fu_risk_num_02_ > _Is Equal to_ > _10_",
+    "_Embedded Data_ > _press_format_ > _Is NOT Equal to_ > __prab__ and __prre__" ,
+    "_Embedded Data_ > _press_format_ > _Is NOT Equal to_ > __prab__ and __prre__",
+    "_Embedded Data_ > _press_format_ > _Is Equal to_ > __prab__ or __prre__"
+  )
+) %>%
   kableME(.)
 ```
 
@@ -175,7 +210,7 @@ tibble(check = "",
                       qIDs = c("will_Q01_01", "fu_Q01_01"), 
                       extra = c("From file: __will_should_she_01_js_complete.txt__", "From file: __fu_should_she_01_js_complete.txt__"))) %>% 
   bind_rows(., tibble(check = "",
-                      qIDs = c("com_Q08_01_01", "com_Q08_03_01"), 
+                      qIDs = c("com_Q10_01_01", "com_Q10_03_01"), 
                       extra = c("From file: __ss_01_js_complete.txt__", "From file: __gs_01_js_complete.txt__"))) %>% 
   kableME(.)
 ```
@@ -190,7 +225,7 @@ tibble(check = "",
                       qIDs = c("will_Q01_02", "fu_Q01_02"), 
                       extra = c("From file: __will_should_she_02_js_complete.txt__", "From file: __fu_should_she_02_js_complete.txt__"))) %>% 
   bind_rows(., tibble(check = "",
-                      qIDs = c("com_Q08_01_02", "com_Q08_03_02"), 
+                      qIDs = c("com_Q10_01_02", "com_Q10_03_02"), 
                       extra = c("From file: __ss_01_js_complete.txt__", "From file: __gs_01_js_complete.txt__"))) %>% 
   kableME(.)
 ```
