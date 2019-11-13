@@ -1,4 +1,4 @@
-<strong>Please, indicate to what extent you agree with the following statements regarding medical screenings.</strong>
+<strong>Please, indicate to what extent you agree with the following statements regarding medical screenings.</strong></span><br><span style="font-size:16px;">Screenings are medical tests used to check for diseases and health conditions before there are any signs or symptoms.
 Participating in screening always has more advantages than disadvantages.
 Participating in screening cannot hurt anyone.
 In my opinion, it is always better to get screened.

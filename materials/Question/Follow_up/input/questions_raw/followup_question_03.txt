@@ -19,5 +19,5 @@ The possibility of undetected ${e://Field/medical_condition_0}
 [eighth_choice]
 The possibility of having a procedure-related ${e://Field/followup_bad_0}
 [ninth_choice]
-Write down the main factor for you:
+Write down the main factor for you (and move the slider below to indicate its influence):
 [choices_end]

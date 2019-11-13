@@ -1,6 +1,6 @@
 [[Question:MC:SingleAnswer:Horizontal]]
 [[ID:replaceID]]
-<span style="font-size:Q_FONT_SIZEpx;">Lastly, it is vital to our study that we only include responses from people that devoted their full attention to this study. Otherwise years of effort (the researchers' and the time of other participants) could be wasted.<br><br>You will receive credit for this study no matter what, please tell us how much effort you put towards this study.<br><br>"I put forth _____ effort towards this study"</span>
+<span style="font-size:Q_FONT_SIZEpx;">Lastly, it is vital to our study that we only include responses from people that devoted their full attention to this study. Otherwise years of effort (the researchers' and the time of other participants) could be wasted.<br><br><b>You will receive credit for this study no matter what, please tell us how much effort you put towards this study.</b><br><br>"I put forth _____ effort towards this study"</span>
 [[Choices]]
 <span style="font-size:C_FONT_SIZEpx;">almost no</span>
 <span style="font-size:C_FONT_SIZEpx;">very little</span>
@@ -11,6 +11,13 @@ __SEP__
 [[Question:MC:SingleAnswer:Vertical]]
 [[ID:replaceID]]
 <span style="font-size:Q_FONT_SIZEpx;">In your honest opinion, should we use your data in our analyses in this study?</span>
+[[Choices]]
+<span style="font-size:C_FONT_SIZEpx;">Yes</span>
+<span style="font-size:C_FONT_SIZEpx;">No</span>
+__SEP__
+[[Question:MC:SingleAnswer:Vertical]]
+[[ID:replaceID]]
+<span style="font-size:Q_FONT_SIZEpx;">And just out of curiosity, ¿did you use any kind of calculator during this experiment?</span>
 [[Choices]]
 <span style="font-size:C_FONT_SIZEpx;">Yes</span>
 <span style="font-size:C_FONT_SIZEpx;">No</span>

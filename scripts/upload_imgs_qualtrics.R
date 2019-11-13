@@ -11,7 +11,7 @@ p_load(RSelenium, tidyverse, clipr) #naptime
 # Re-sources --------------------------------------------------------------
 source("functions/get2survey.R")
 source("functions/UBER_IMPORT2QUALTRICS_miro.R")
-source(here::here("R/qualtrics_start_docker.R"), local = TRUE)
+# source(here::here("R/qualtrics_start_docker.R"), local = TRUE)
 # qualtrics_start_docker()
 
 
@@ -24,12 +24,15 @@ system('docker stop $(docker ps -q)') # MATALOS todos
 # Get chrome image (to use VNC use debug)
 system('docker pull selenium/standalone-chrome-debug') 
 # Run docker session. Map home directory to download docker container
-system('docker run -d -v /home:/home/seluser/Downloads -P selenium/standalone-chrome-debug')
+# system('docker run -d -v /home:/home/seluser/Downloads -P selenium/standalone-chrome-debug')
+system('docker run -t -d --shm-size=2g -e SCREEN_WIDTH=2560 -e SCREEN_HEIGHT=1440 -e SCREEN_DEPTH=24 --name rqualtrics_images -v /home/emrys/:/home/seluser/Downloads -P selenium/standalone-chrome-debug') #standalone-firefox 
+
 # Get important data about ports
 system('docker ps')
 
 # This is the path to materials folder within docker container
-selenium_path <- "/home/seluser/Downloads/nicolas/asgard/fondecyt/gorka/2017 - Gorka - Fondecyt/Experimentos/Experimento 1/R_condition_creation_GITHUB/R_conditions_creation"
+# selenium_path <- "/home/seluser/Downloads/nicolas/asgard/fondecyt/gorka/2017 - Gorka - Fondecyt/Experimentos/Experimento 1/R_condition_creation_GITHUB/R_conditions_creation"
+selenium_path <<- "/home/seluser/Downloads/gorkang@gmail.com/RESEARCH/PROYECTOS/2017 - Gorka - Fondecyt_NO_SHARED/Experimentos/Experimento 1/R_conditions_creation/"
 
 # To remove blocks
 # remove_blocks_qualtrics(start_on = 1, survey_type = "miro")
@@ -40,8 +43,11 @@ selenium_path <- "/home/seluser/Downloads/nicolas/asgard/fondecyt/gorka/2017 - G
 
 # Selenium ----------------------------------------------------------------
 
+container_port_raw <- system(('docker port rqualtrics_images'), intern = TRUE)
+container_port <<- container_port_raw %>% gsub('.*([0-9]{5}).*', '\\1', .) %>% as.integer()
+container_port[2]
 # Create browser instance. This should be reflected in the VNC session
-remDr <- remoteDriver(remoteServerAddr = "localhost", port = 32769, browserName = "chrome")
+remDr <- remoteDriver(remoteServerAddr = "localhost", port = container_port[1], browserName = "chrome")
 remDr$open()
 
 # Survey link (why did the url change?)
@@ -128,12 +134,26 @@ elements <- remDr$findElements("class name", "icon-gear")
 # list to store urls
 imgs <- rep(list(vector("character", 2)), length(elements)/2)
 
+# Listado manual. 
+# imgs = list(
+#   c("ca_fbpi_ppvhigh", "https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_5u3XaT7Q8iLUuXz"),
+#   c("ca_fbpi_ppvlow","https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_8kpUpGvi69Km74N"),
+#   c("ca_nppi_ppvhigh","https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_9ZUNAyKy59u7tDD"),
+#   c("ca_nppi_ppvlow", "https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_81u6HHoaiaQAr4h"),
+#   c("pr_fbpi_ppvhigh","https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6JQX662i8hMInB3"),
+#   c("pr_fbpi_ppvlow","https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_57oC3XtEQ7d2ZZX"),
+#   c("pr_nppi_ppvhigh", "https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_3r4YvxM4NXVKLFH"),
+#   c("pr_nppi_ppvlow","https://qsharingeu.eu.qualtrics.com/ControlPanel/Graphic.php?IM=IM_6QXycdkzI4jb1Rz")
+# )
+
+
 # Scraping
 for (i in seq(1+length(elements)/2, length(elements))) {
-  # i = 9
+  # i = 1
   
   # Cog button
   webElem <- elements[[i]]
+  webElem$highlightElement(1) # Selecciona el elemento
   webElem$clickElement() # click cog button
   
   # "Edit Graphic"

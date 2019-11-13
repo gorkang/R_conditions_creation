@@ -4,10 +4,10 @@ Thanks for your interest in our study!
 
 In order to participate, you must be at least 18 years old and be a fluent English speaker.
 
-During your participation in this study, you will be presented with detailed descriptions of medical diseases and tests, and will have to answer questions about them. You will also need to fill questionnaires about how certain diseases and medical procedures make you feel. Other than that, you will encounter no greater risks of discomfort than those incurred in routine daily activities.
-
+During your participation in this study, you will be presented with detailed descriptions of medical diseases and tests, and will have to answer questions about them. You will need to fill questionnaires about how certain diseases and medical procedures make you feel. You will also need to fill questionnaires about your feelings, preferences and dispositions. Other than that, you will encounter no greater risks of discomfort than those incurred in routine daily activities.
+ 
 Questions or concerns about this study, the use of your data, or interest in the final results of the study, may be directed to Prof. Gorka Navarrete (gorka.navarrete@uai.cl).
 
-As an informed participant, by advancing to the next page I acknowledge:
+As an informed participant, <strong>by advancing to the next page I acknowledge:</strong>
 
 <ul><li>My participation is voluntary and I may cease to take part in this study at any time, without penalty.</li><li>All my questions about the experiment have been satisfactorily answered.</li><li>The data collected will only be used to promote scientific knowledge and the researcher will use the data I provide for no purpose other than research.</li><li>The data I provide is confidential.</li></ul>

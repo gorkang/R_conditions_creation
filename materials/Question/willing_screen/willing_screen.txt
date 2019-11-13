@@ -28,4 +28,4 @@ Imagine a ${e://Field/woman_age_0} year old woman you care about is offered to p
 <span style="font-size:16px;">The seriousness of a false positive result in the screening test</span>
 <span style="font-size:16px;">The possibility of undetected ${e://Field/medical_condition_0}</span>
 <span style="font-size:16px;">The possibility of receiving additional treatments because of a false positive result in the screening test</span>
-<span style="font-size:16px;">Write down the main factor for you:</span>
+<span style="font-size:16px;">Write down the main factor for you (and move the slider below to indicate its influence):</span>
