@@ -84,7 +84,7 @@ qualtrics_remove_blocks <- function(start_on = 1, survey_type = "gorka", debug_i
   # 2. Delete clock ---------------------------------------------------------
 
     if (debug_it == TRUE) message("2. Delete block")    
-      
+      Sys.sleep(1)
         if (survey_type == "gorka") {
             child <- "17"
           } else if (survey_type == "miro") {

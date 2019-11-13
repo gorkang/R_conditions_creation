@@ -44,7 +44,7 @@ __QSEP__
 [[Choices]]
 <span style='font-size:C_FONT_SIZEpx;'>29 students</span>
 <span style='font-size:C_FONT_SIZEpx;'>30 students</span>
-<span style='font-size:C_FONT_SIZEpx;'>1 students</span>
+<span style='font-size:C_FONT_SIZEpx;'>1 student</span>
 <span style='font-size:C_FONT_SIZEpx;'>15 students</span>
 __QSEP__
 [[Question:MC:SingleAnswer:Vertical]]

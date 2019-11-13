@@ -6,4 +6,4 @@ Imagine a woman you care about participated in a routine screening to detect a m
 
 The doctor offers her a follow-up test ${e://Field/doctor_offers_0}, necessary to confirm the diagnosis. During the procedure, a needle is inserted to take a sample of ${e://Field/fluid_test_0}.
 
-${e://Field/test_name_0} has a ${e://Field/fu_risk_num_0}% procedure-related risk of complications (for example infections) that can result in a ${e://Field/medical_consequence_0}.
+${e://Field/test_name_0} has a ${e://Field/fu_risk_num_0}% procedure-related risk of complications (for example infections) ending in a ${e://Field/medical_consequence_0}.

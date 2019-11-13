@@ -1,7 +1,9 @@
 qualtrics_move_ED_blocks <- function(start_on = 0, debug_it = FALSE) {
 
   # start_on = 0
-  # debug_it = TRUE
+  debug_it = TRUE
+  remDr$setImplicitWaitTimeout(milliseconds = 10000)
+  remDr$setTimeout(type = "implicit", milliseconds = 2000)
   tictoc::tic.clearlog()
   
   # Get to Survey Flow
@@ -11,23 +13,25 @@ qualtrics_move_ED_blocks <- function(start_on = 0, debug_it = FALSE) {
   Sys.sleep(5) # give it time
   
   # Get blocks
-  ed_blocks <- remDr$findElements("class name", "Move")
+  .GlobalEnv$ed_blocks <- remDr$findElements("class name", "Move")
   # Si esta vacio, esperar unos segundos y reintentar
-  if (length(ed_blocks) == 0 ) {
+  if (length(.GlobalEnv$ed_blocks) == 0 ) {
     Sys.sleep(5) # give it time
-    ed_blocks <- remDr$findElements("class name", "Move")
+    .GlobalEnv$ed_blocks <- remDr$findElements("class name", "Move")
   }
   
   # Remove first element (first element is not any of the survey flow elements)
-  ed_blocks <- ed_blocks[-1]
-  message(length(ed_blocks))
+  .GlobalEnv$ed_blocks <- .GlobalEnv$ed_blocks[-1]
+  message(length(.GlobalEnv$ed_blocks))
   
   # Set counter to 0. This keeps track of the last block moved.
   .GlobalEnv$safe_counter <- start_on
   
-  while (.GlobalEnv$safe_counter != length(ed_blocks)) {
-    remDr$refresh()
-
+  while (.GlobalEnv$safe_counter != length(.GlobalEnv$ed_blocks)) {
+    # if(debug_it == TRUE) message("While1: ", .GlobalEnv$safe_counter, " ", length(.GlobalEnv$ed_blocks))
+    # # remDr$refresh()
+    # if(debug_it == TRUE) message("While2: ", .GlobalEnv$safe_counter, " ", length(.GlobalEnv$ed_blocks))
+    
     # Get to Survey Flow (if is not possible continue running the code)
     try(expr = {
       webElem <- remDr$findElement("css selector", "#surveyflow")
@@ -47,10 +51,10 @@ qualtrics_move_ED_blocks <- function(start_on = 0, debug_it = FALSE) {
       
       # TIME
       time_mean = mean(as.numeric(gsub(" sec elapsed", "", tictoc::tic.log() %>% unlist())))
-      message("Promedio_bloque: ",  time_mean, ". Estimado: ", time_mean * (length(ed_blocks) - i))
+      message("Promedio_bloque: ",  time_mean, ". Estimado: ", time_mean * (length(.GlobalEnv$ed_blocks) - i))
       
       # Progress message
-      message(paste0("Moving block ", i, " / ", length(ed_blocks) - 3))
+      message(paste0("Moving block ", i, " / ", length(.GlobalEnv$ed_blocks) - 3))
       
       .GlobalEnv$webElem1 <-
         remDr$findElement(using = 'css selector',
@@ -64,10 +68,11 @@ qualtrics_move_ED_blocks <- function(start_on = 0, debug_it = FALSE) {
       webElem$sendKeysToElement(list(key = "up_arrow"))
       tictoc::toc(log = TRUE)
       
+      if(debug_it == TRUE) message("Before if: ", i, " - ", .GlobalEnv$safe_counter, " ", length(.GlobalEnv$ed_blocks))
       
       
       # Grupos de 50. El uso de memoria RAM aumenta mucho con firefox
-      if (i == 50 + .GlobalEnv$safe_counter | i == length(ed_blocks)) {
+      if (i == 50 + .GlobalEnv$safe_counter | i == length(.GlobalEnv$ed_blocks)) {
         beep(sound = 1)
         
         Sys.sleep(1)
@@ -81,6 +86,7 @@ qualtrics_move_ED_blocks <- function(start_on = 0, debug_it = FALSE) {
         break
       }
       
+      if(debug_it == TRUE) message("After if: ", i, " - ", .GlobalEnv$safe_counter, " ", length(.GlobalEnv$ed_blocks))
       
     }
     

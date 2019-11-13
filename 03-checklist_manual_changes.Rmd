@@ -35,12 +35,12 @@ tibble(check = "",
                 "fu_Q08_01",
                 "will_Q02_02", 
                 'will_Q03_02', paste0("com_Q", sprintf("%02d", 1:8),"_02"), "fu_Q02_02", "fu_Q03_02", "fu_Q05_02", "fu_Q06_02", "fu_Q07_02", "fu_Q08_02"),
-       extra = c('', "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you:' subitem", rep("", 8), "", "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you:' subitem", 
+       extra = c('', "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you (and move the slider below to indicate its influence):' subitem", rep("", 8), "", "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you (and move the slider below to indicate its influence):' subitem", 
                  "Min value 0, Max value 1 Num. of dec. 1", 
                  'Min value 0, Max value 10. Num. of dec. 1', 
                  'Min value 1, Max value 100. Num. of dec. 1', 
                  'Min value 10, Max value 100. Num. of dec. 1', 
-                 "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you:' subitem", rep("", 8), "", "", "After change to Slider, __Select__ Allow Text Entry on 'Other' subitem", 
+                 "After change to Slider, __Select__ Allow Text Entry on 'Write down the main factor for you (and move the slider below to indicate its influence):' subitem", rep("", 8), "", "", "After change to Slider, __Select__ Allow Text Entry on 'Other' subitem", 
                  "Min value 0, Max value 1 Num. of dec. 1", 
                  'Min value 0, Max value 10. Num. of dec. 1', 
                  'Min value 1, Max value 100. Num. of dec. 1', 
@@ -110,7 +110,7 @@ tibble(check = "",
                 "fu_Q07_01", 
                 "fu_Q08_01", 
                 "com_Q10_01_01", "com_Q10_02_01", "com_Q10_03_01"),
-       extra = c("_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ & _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__", 
+       extra = c("_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ OR _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__", 
                  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gi__",  
                  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gs__",  
                  "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__", 
@@ -153,7 +153,7 @@ tibble(
     "com_Q10_03_01"
   ),
   extra = c(
-    "_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ & _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__",
+    "_Embedded Data_ > _press_format_ > _Is Not Equal to_ > __pfab__ OR _Embedded Data_ > _resp_type_ > _Is Not Equal to_ > __sg__",
     "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gi__",
     "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __gs__",
     "_Embedded Data_ > _resp_type_ > _Is Equal to_ > __sg__",
@@ -302,6 +302,17 @@ tibble(check = "",
   kableME(.)
 ```
 
+_Cognitive Reflection Test - Verbal_
+
+```{r, echo=FALSE}
+this <- filter(scale_names, long_name == "crt_verbal")
+
+tibble(check = "",
+       qIDs = paste0(this$short_name, "_", sprintf("%02d", seq(this$no_items))), 
+       extra = "") %>%
+  kableME(.)
+```
+
 _General Decision Making Style_
 
 ```{r, echo=FALSE}
@@ -325,6 +336,25 @@ tibble(check = "",
                  rep("Content Validation -> Number", 1))) %>%
   kableME(.)
 ```
+
+_Berlin Numeracy Test_
+
+
+```{r, echo=FALSE}
+this <- filter(scale_names, long_name == "berlin_numeracy_test")
+
+tibble(check = "",
+       qIDs = paste0(this$short_name, "_", sprintf("%02d", seq(this$no_items))), 
+       extra = c(rep("Content Validation -> Number", 4)),
+       extra2 = c(rep("ADD display logic: SEE adaptive algorithm from Cokely, E. T., & Galesic, M. (2012). Measuring Risk Literacy : The Berlin Numeracy Test, 7(1), 25–47.", 4))) %>%
+  kableME(.)
+
+print("DISPLAY LOGIC: \n See bnt_02 IF response to bnt_01 NOT EQUAL to 25 \n
+      See bnt_03 IF response to bnt_01 EQUAL to 25 \n
+      See bnt_04 IF response to bnt_03 NOT EQUAL to 20 AND IF response to bnt_01 EQUAL to 25")
+```
+
+
 
 _Multiple Stimulus Types Ambiguity Tolerance Scale II_
 

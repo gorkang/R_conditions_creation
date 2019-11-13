@@ -1,0 +1,97 @@
+---
+title: "NOTAS IMPORTANTES"
+author: "Gorka Navarrete"
+date: "9/27/2019"
+output: html_document
+---
+
+# Hay un error en fillers.csv:
+
+En comp_05, los fillers estan al reves.  
+
+  AHORA:
+    comp_05,are pregnant with a fetus with Down syndrome,have breast cancer,
+  DEBERIA SER:
+    comp_05,have breast cancer,are pregnant with a fetus with Down syndrome,
+  
+  
+  Lo corregimos directamente en la encuesta de Qualtrics, en com_Q09_01 y com_Q09_02, invirtiendolos.
+  
+  Normalmente, com_Q09_01 deberia ser: 
+  
+  How many women at age ${e://Field/woman_age_01} ${e://Field/comp_05_01} at the time of the screening?, pero la dejamos:
+  How many women at age ${e://Field/woman_age_01} ${e://Field/comp_05_02} at the time of the screening?
+  
+  Quedan por lo tanto: 
+  com_Q09_01: How many women at age ${e://Field/woman_age_01} ${e://Field/comp_05_02} at the time of the screening?
+  com_Q09_02: How many women at age ${e://Field/woman_age_02} ${e://Field/comp_05_01} at the time of the screening?
+
+
+# Cambios pre-piloto final (AUN NO EN SISTEMA)
+
+ppv_01_t y ppv_02_t
+  Enable submit after (seconds): 10
+fu_Q01_01_t y fu_Q01_02_t
+  Enable submit after (seconds): 5
+
+
+RISK_PREFERENCE
+
+FAMILIARITY en CRT7 y CRTV
+
+RANDOMIZATION DE preguntas y alternativas en CRTs!
+
+-Randomization - Randomize the order of all choices
+
+
+severity_emo_block_01
+sevEmoTit01: 
+  AÑADIR: <span style="font-size:16px;">Remember medical screenings are tests used to check for diseases and health conditions before there are any signs or symptoms.</span></div><span style="font-size:40px;"></span>
+
+
+severity_emo_block_03
+sevEmoTit03: 
+  AÑADIR: <div><strong><span style="font-size:19px;">From the perspective of someone that has to go trough them.</span></strong></div>
+  
+
+*** IMPORTANTE: Logica en ppv: Cambiar AND por OR
+
+  
+## Prueba risk_preference
+
+
+IMPLEMENTAR EN SISTEMA!
+
+
+You are going to be shown a series of eight tasks. The purpose of the tasks is to examine preferences about monetary rewards.
+
+You will be asked to choose between an amount that can be received (or lost) for sure and another amount that can be received with some probability.
+
+You will not actually receive the rewards. However, please make each choice as if it were real.
+
+8 items Miro
+5 Items Frederick (lose)
+
+
+
+
+# INSTRUCCIONES HIT
+
+Medical brochures experiment
+
+You will be presented with consent forms and information about medical conditions. Your task will be to perform estimations, make decisions, and to tell us your opinion, feelings, etc.
+
+
+This is an experiment about how we understand consent forms for medical tests and make decisions based on their content. Our goal is to improve how medical risks are communicated.
+
+If you participate, we need you to take the experiment seriously. The duration of the HIT is expected to be ~1 hour. Please, do your best to be focused while completing it.
+
+The experiment is intended ONLY FOR fluent English speakers. 
+
+Please read the questions carefully and try to answer to the best of your ability.
+
+Thanks for your participation!
+
+
+
+Medical tests, Uncertainty, Psychology experiment, medical risks, decision making, medical communication

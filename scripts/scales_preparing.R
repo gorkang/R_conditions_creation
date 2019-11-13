@@ -21,6 +21,8 @@ source("scripts/scale_beck_anxiety_inventory.R")
 source("scripts/scale_big_five_inventory.R")
 # cognitive_reflection_test_7 ################################
 source("scripts/scale_cognitive_reflection_test_7.R")
+# crt_verbal #################################################
+source("scripts/scale_crt_verbal.R")
 # general_decision_making_style ##############################
 source("scripts/scale_general_decision_making_style.R")
 # abbreviated_math_anxiety_rating_scale ######################

@@ -27,7 +27,7 @@
   qualtrics_start_docker()
 
 # Import Embedded data blocks --------------------------------------------------
-
+  
   # Dir with ED blocks
   full_path <- "materials/qualtrics/output/plain_text/embedded_data_blocks"
   
@@ -44,6 +44,7 @@
 
 # DELETE UNNECESARY BLOCKS ------------------------------------------------
 
+  # Aun Falla algunas veces (1/75). 
   qualtrics_remove_blocks(start_on = 1, survey_type = "miro", debug_it = TRUE)
   remDr$refresh()
     
@@ -51,7 +52,7 @@
 # Move ED blocks ---------------------------------------------------------
 
   # ZOOM TO MINIMUM in FIREFOX (Not needed any more?)
-  # Very heavy on RAM. Try with other browser? START A NEW DOCKER
+  # Very heavy on RAM. Try with other browser (Chrome too slow)? START A NEW DOCKER
   # qualtrics_start_docker()
   
   qualtrics_move_ED_blocks(start_on = 0)
@@ -121,6 +122,8 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(5)
+
 
 # Severity emotional reaction scale -----------------------------------------------------------
 
@@ -132,6 +135,8 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(5)
+
 
 # Screening block -----------------------------------------------------------
 
@@ -143,6 +148,8 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
+
 
 # Cognitive scales INSTRUCTIONS --------------------------------------------------
 
@@ -154,6 +161,9 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
+
+
 
 # Import COGNITIVE scales --------------------------------------------------
 
@@ -178,6 +188,7 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
 
 
 # Personality scales INSTRUCTIONS --------------------------------------------------
@@ -190,6 +201,8 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
+
 
 # Personality scales -------------------------------------------------------------- 
 
@@ -213,6 +226,7 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
 
 # Previous experience -----------------------------------------------------------
 
@@ -224,6 +238,7 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
 
 
 # Comments -----------------------------------------------------------
@@ -236,6 +251,8 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
+
 
 # survey effort -----------------------------------------------------------
 
@@ -247,6 +264,7 @@ Q_counter <- 0
 
 # UPLOAD!
 UBER_IMPORT2QUALTRICS_miro(file_paths)
+Sys.sleep(10)
 
 
 
@@ -254,6 +272,6 @@ UBER_IMPORT2QUALTRICS_miro(file_paths)
 
 # FINISH ------------------------------------------------------------------
 
-  send_email(to_email = "gorka.navarrete@uai.cl",
-             type = "end",
-             password_mail)
+  # send_email(to_email = "gorka.navarrete@uai.cl",
+  #            type = "end",
+  #            password_mail)
